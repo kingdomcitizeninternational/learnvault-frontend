@@ -1,0 +1,340 @@
+/* ====== GLOBAL STYLES ====== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body, .page {
+  font-family: "Inter", "Segoe UI", Arial, sans-serif;
+  background-color: #fff;
+  color: #1b1b1b;
+  min-height: 100vh;
+  overflow-x: hidden;
+  transition: all 0.3s ease;
+}
+
+/* ====== SIDEBAR ====== */
+.sidebar {
+  width: 260px;
+  background: #004aad;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem 1rem;
+  position: fixed;
+  left: -270px;
+  top: 0;
+  height: 100%;
+  transition: all 0.3s ease-in-out;
+  z-index: 1000;
+}
+.sidebar.open { left: 0; }
+
+.brandRow, .profile {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
+.brand {
+  display: flex;
+  align-items: center;
+}
+.logo {
+  font-size: 1.3rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+.closeBtn {
+  background: transparent;
+  border: none;
+  color: #fff;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+/* ====== PROFILE ====== */
+.profile {
+  justify-content: flex-start;
+  gap: 0.7rem;
+}
+.avatar {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+}
+.profileName {
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+/* ====== NAVIGATION ====== */
+.nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  flex-grow: 1;
+}
+.navItem {
+  background: transparent;
+  color: #ffffffcc;
+  border: none;
+  text-align: left;
+  font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  padding: 0.6rem 0.9rem;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+.navItem:hover, .active {
+  background: rgba(255, 255, 255, 0.18);
+  color: #fff;
+}
+.active { font-weight: 600; }
+
+.sidebarFooter {
+  margin-top: auto;
+}
+.logoutSmall {
+  background: transparent;
+  color: #fff;
+  border: none;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.9rem;
+  cursor: pointer;
+  opacity: 0.85;
+  transition: opacity 0.2s ease;
+}
+.logoutSmall:hover { opacity: 1; }
+
+/* ====== OVERLAY ====== */
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  z-index: 500;
+}
+.overlayVisible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* ====== MAIN CONTENT ====== */
+.main {
+  flex: 1;
+  margin-left: 260px;
+  display: flex;
+  flex-direction: column;
+  transition: margin-left 0.3s ease-in-out;
+}
+.main > * {
+  padding: 0 2rem;
+}
+@media (max-width: 900px) {
+  .main { margin-left: 0; }
+}
+
+/* ====== TOP NAVBAR ====== */
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #fff;
+  border-bottom: 1px solid #e5e9f2;
+  padding: 0.9rem 2rem;
+  height: 60px;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+.leftControls {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.menuBtn {
+  background: transparent;
+  border: none;
+  color: #004aad;
+  font-size: 1.6rem;
+  cursor: pointer;
+  display: none;
+}
+.topTitle {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #004aad;
+}
+.topLinks {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+}
+.topLink {
+  color: #004aad;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+.topLink:hover { color: #0073ff; }
+.logoutBtn {
+  background: #004aad;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 0.7rem 1.1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  font-size: 0.95rem;
+}
+.logoutBtn:hover { background: #0073ff; }
+
+@media (max-width: 900px) {
+  .menuBtn { display: inline; }
+  .topLinks { display: none; }
+}
+
+/* ====== COURSE DETAIL SECTION ====== */
+.detailContainer {
+  max-width: 900px;
+  margin: 2rem auto;
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+  padding: 2rem;
+}
+.detailTitle {
+  color: #004aad;
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+.metaGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 1rem;
+  font-size: 0.95rem;
+  color: #555;
+  margin-bottom: 1.5rem;
+}
+.detailBody {
+  color: #333;
+  line-height: 1.7;
+  margin-bottom: 2rem;
+  font-size: 1rem;
+}
+
+/* ====== FILE CARD ====== */
+.fileCard {
+  background: #f9fbff;
+  border: 1px solid #e3e8f0;
+  border-radius: 14px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+  overflow: hidden;
+}
+.fileHeader {
+  background: #eef3fa;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.3rem;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+}
+.fileInfo {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-weight: 600;
+  color: #004aad;
+}
+.fileDetails {
+  padding: 1rem 1.3rem;
+  border-top: 1px solid #e1e7f0;
+  color: #444;
+  font-size: 0.95rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 0.5rem;
+}
+
+/* ====== BUTTONS ====== */
+.downloadBtn, .logoutBtn {
+  background: #004aad;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 0.7rem 1.2rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  transition: background 0.3s ease;
+}
+.downloadBtn:hover, .logoutBtn:hover {
+  background: #006aff;
+}
+
+/* ====== PDF FRAME ====== */
+.pdfFrame {
+  width: 100%;
+  height: 360px;
+  border: none;
+  border-top: 1px solid #e3e8f0;
+}
+
+/* ====== ACCESS BOX ====== */
+.accessBox {
+  margin-top: 1.8rem;
+  background: #f5f7fb;
+  padding: 1rem;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  color: #333;
+  border-left: 4px solid #004aad;
+}
+
+/* ====== RESPONSIVE ====== */
+@media (max-width: 768px) {
+  .detailContainer {
+    margin: 1rem;
+    padding: 1.4rem;
+  }
+  .detailTitle { font-size: 1.4rem; }
+  .fileHeader {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .downloadBtn {
+    width: 100%;
+    justify-content: center;
+  }
+  .pdfFrame { height: 300px; }
+}
+
+@media (max-width: 480px) {
+  .topbar { padding: 0.7rem 1rem; }
+  .main > * { padding: 0 1rem; }
+  .detailContainer { border-radius: 10px; padding: 1rem; }
+  .detailTitle { font-size: 1.2rem; }
+  .metaGrid, .fileDetails { grid-template-columns: 1fr; }
+  .pdfFrame { height: 250px; }
+}
+

@@ -1,38 +1,50 @@
-.App {
-  text-align: center;
+/*ABeeZee font import stays here*/
+@import url('https://fonts.googleapis.com/css2?family=ABeeZee&display=swap');
+
+::placeholder {
+  font-size: 1rem;
+  color:rgb(134, 134, 134);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+:root {
+  color-scheme: light;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #ffffff !important;
+    color: #000000 !important;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+
+::-webkit-scrollbar {
+  display: none;
 }
 
-.App-link {
-  color: #61dafb;
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active{
+  -webkit-box-shadow:0 0 0 30px white inset !important
+}
+input{
+  background-color: transparent;
+
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+button {
+  transition: all 0.3s ease;
+  cursor: pointer;
+  outline: none;
+  box-shadow: none;
+}
+
+
+
+
+p,div,h1,h2.h3,h4,h5,h6,button,span,input,select{
+  font-family: 'ABeeZee';
+ 
 }

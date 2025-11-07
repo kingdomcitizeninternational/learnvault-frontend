@@ -1,0 +1,323 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+
+.page {
+  display: flex;
+  background-color: #f5f8ff;
+  min-height: 100vh;
+  color: #1a1a1a;
+  font-family: "Inter", sans-serif;
+  overflow-x: hidden;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 250px;
+  background: linear-gradient(180deg, #004aad 0%, #003c8f 100%);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  padding: 1.8rem 1.2rem;
+  position: fixed;
+  left: -290px;
+  top: 0;
+  height: 100%;
+  transition: all 0.35s ease-in-out;
+  box-shadow: 4px 0 20px rgba(0, 0, 0, 0.05);
+  z-index: 1000;
+}
+
+.sidebar.open {
+  left: 0;
+}
+
+.brandRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2.2rem;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+.closeBtn {
+  background: transparent;
+  border: none;
+  color: #fff;
+  font-size: 1.6rem;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+.closeBtn:hover {
+  transform: rotate(90deg);
+}
+
+/* Profile in sidebar */
+.profile {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  margin-bottom: 2.2rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  padding-bottom: 1rem;
+}
+
+.avatar {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background: #ffffff33 url("https://cdn-icons-png.flaticon.com/512/149/149071.png") center/cover no-repeat;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.profileName {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #fff;
+}
+
+/* Nav links */
+.nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  flex-grow: 1;
+}
+
+.navItem {
+  background: transparent;
+  color: #d7e3ff;
+  border: none;
+  text-align: left;
+  font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  padding: 0.7rem 0.9rem;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.navItem svg {
+  font-size: 1.1rem;
+  color: #a9c6ff;
+  transition: color 0.3s, transform 0.2s;
+}
+
+.navItem:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateX(4px);
+}
+
+.navItem:hover svg {
+  color: #fff;
+  transform: scale(1.15);
+}
+
+.active {
+  background: rgba(255, 255, 255, 0.15);
+  color: #fff;
+  font-weight: 600;
+}
+
+.active svg {
+  color: #fff;
+}
+
+/* Logout small */
+.logoutSmall {
+  background: rgba(255, 255, 255, 0.15);
+  border: none;
+  border-radius: 8px;
+  color: #fff;
+  padding: 0.7rem 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background 0.3s;
+}
+.logoutSmall:hover {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+/* Overlay for mobile */
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  z-index: 500;
+}
+.overlayVisible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Main content */
+.main {
+  flex: 1;
+  margin-left: 250px;
+  display: flex;
+  flex-direction: column;
+  transition: margin-left 0.3s ease;
+}
+@media (max-width: 900px) {
+  .main {
+    margin-left: 0;
+  }
+}
+
+/* Topbar */
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #ffffff;
+  border-bottom: 1px solid #e5e9f2;
+  padding: 1rem 2rem;
+  height: 65px;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.leftControls {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.menuBtn {
+  background: transparent;
+  border: none;
+  color: #004aad;
+  font-size: 1.7rem;
+  cursor: pointer;
+}
+
+.topTitle {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #004aad;
+}
+
+.logoutBtn {
+  background: #004aad;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 16px;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  transition: all 0.25s;
+}
+.logoutBtn:hover {
+  background: #003c8f;
+  transform: scale(1.03);
+}
+
+/* Profile container */
+.profileContainer {
+  padding: 2rem;
+  background: #ffffff;
+  border-radius: 14px;
+  margin: 1rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease;
+}
+.profileContainer:hover {
+  transform: translateY(-3px);
+}
+
+.profileHeader {
+  display: flex;
+  align-items: center;
+  gap: 1.8rem;
+  border-bottom: 1px solid #f0f3fb;
+  padding-bottom: 1rem;
+}
+
+.avatarLarge {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  background: #e0e6f9 url("https://cdn-icons-png.flaticon.com/512/149/149071.png") center/cover no-repeat;
+  border: 3px solid #004aad33;
+}
+
+.studentName {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #004aad;
+  margin-bottom: 0.2rem;
+}
+
+.studentID {
+  color: #6b7280;
+  font-size: 0.95rem;
+}
+
+.editBtn {
+  margin-top: 0.5rem;
+  background: #004aad;
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  transition: background 0.3s, transform 0.2s;
+}
+.editBtn:hover {
+  background: #003c8f;
+  transform: scale(1.04);
+}
+
+.infoGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 1.2rem;
+  margin-top: 1.6rem;
+}
+
+.infoGrid div {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: #f9fbff;
+  padding: 0.9rem 1rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+  transition: transform 0.2s ease, box-shadow 0.2s;
+}
+.infoGrid div:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+.infoGrid svg {
+  font-size: 1.2rem;
+  color: #004aad;
+  background: #e0e9ff;
+  padding: 6px;
+  border-radius: 50%;
+}
+
+@media screen and (max-width: 600px) {
+  
+.profileContainer {
+    padding: 0px;
+  }        
+}

@@ -1,0 +1,258 @@
+.loginContainer {
+  display: flex;
+  min-height: 100vh;
+  background: #f8fafc;
+  color: #1e293b;
+  font-family: "Inter", sans-serif;
+}
+
+/* === LEFT BLUE PANEL === */
+.leftPanel {
+  flex: 1;
+  background: linear-gradient(135deg, #2563eb, #1e40af);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 5rem 4rem;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 2rem;
+}
+
+.logo {
+  width: 42px;
+  height: 42px;
+}
+
+.brand h1 {
+  font-size: 1.7rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.heading {
+  font-size: 2.2rem;
+  font-weight: 700;
+  line-height: 1.3;
+  margin-bottom: 1rem;
+}
+
+.subText {
+  font-size: 1.05rem;
+  opacity: 0.95;
+  max-width: 420px;
+  line-height: 1.6;
+}
+
+/* === RIGHT WHITE FORM === */
+.rightPanel {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem;
+}
+
+.formCard {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+  padding: 3rem 2.8rem;
+  width: 100%;
+  max-width: 430px;
+  animation: fadeIn 0.6s ease;
+}
+
+.formCard h2 {
+  text-align: center;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 1.8rem;
+}
+
+.inputGroup {
+  margin-bottom: 1.3rem;
+}
+
+.inputGroup label {
+  display: block;
+  margin-bottom: 0.4rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #334155;
+}
+
+.inputGroup input {
+  width: 90%;
+  padding: 0.9rem 1rem;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  font-size: 1rem;
+  outline: none;
+  transition: 0.2s ease;
+}
+
+.inputGroup input:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+}
+
+.extraRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.2rem;
+}
+
+.remember {
+  font-size: 0.9rem;
+  color: #475569;
+}
+
+.forgotLink {
+  font-size: 0.9rem;
+  color: #2563eb;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.forgotLink:hover {
+  text-decoration: underline;
+}
+
+.loginBtn {
+  width: 100%;
+  background: #2563eb;
+  color: white;
+  border: none;
+  padding: 0.95rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s ease;
+  margin-top: 0.3rem;
+}
+
+.loginBtn:hover {
+  background: #1e40af;
+}
+
+.redirectText {
+  margin-top: 1.5rem;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #475569;
+}
+
+.redirectText span {
+  color: #2563eb;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.redirectText span:hover {
+  text-decoration: underline;
+}
+
+/* === RESPONSIVE DESIGN === */
+
+/* Medium screens (tablet) */
+@media (max-width: 992px) {
+  .loginContainer {
+    flex-direction: column;
+  }
+
+  .leftPanel {
+    padding: 3rem 2rem;
+    text-align: center;
+    align-items: center;
+  }
+
+  .heading {
+    font-size: 1.8rem;
+  }
+
+  .subText {
+    font-size: 1rem;
+    max-width: 90%;
+  }
+
+  .rightPanel {
+    padding: 2.5rem 2rem;
+  }
+}
+
+/* Small screens (mobile) */
+@media (max-width: 600px) {
+  .loginContainer {
+    flex-direction: column-reverse;
+  }
+
+  .leftPanel {
+    padding: 2rem 1.5rem;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .brand h1 {
+    font-size: 1.4rem;
+  }
+
+  .heading {
+    font-size: 1.5rem;
+  }
+
+  .subText {
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+
+  .rightPanel {
+    padding: 1.5rem;
+  }
+
+  .formCard {
+    padding: 1.8rem 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.07);
+  }
+
+  .formCard h2 {
+    font-size: 1.4rem;
+  }
+
+  .inputGroup input {
+    padding: 0.8rem;
+    font-size: 0.95rem;
+  }
+
+  .loginBtn {
+    padding: 0.8rem;
+    font-size: 0.95rem;
+  }
+
+  .extraRow {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
