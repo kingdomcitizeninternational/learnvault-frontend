@@ -13,6 +13,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 15px; /* added padding for very small screens */
+  box-sizing: border-box;
 }
 
 /* Center container */
@@ -21,18 +23,22 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 100%;
+  max-width: 420px; /* caps width on large screens */
 }
 
 /* Modal content card */
 .modal_input_card {
-  width: 350px;
+  width: 100%;
   background-color: #fff;
   border-radius: 12px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-  padding: 20px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  padding: 25px;
   text-align: center;
   box-sizing: border-box;
   animation: fadeIn 0.25s ease-in-out;
+  max-height: 90vh; /* prevents overflow on small screens */
+  overflow-y: auto;
 }
 
 /* Content layout */
@@ -49,12 +55,14 @@
   font-weight: 400;
   color: rgb(70, 70, 70);
   margin: 0;
+  word-wrap: break-word;
 }
 
 /* Button */
 .modal_button {
   width: 80%;
-  padding: 10px;
+  max-width: 240px;
+  padding: 12px;
   border: none;
   border-radius: 30px;
   background-color: #1e40af;
@@ -77,9 +85,23 @@
 /* Responsiveness */
 /* ===================== */
 
-@media screen and (max-width: 550px) {
+@media screen and (max-width: 768px) {
   .modal_input_card {
-    width: 85%;
+    padding: 20px;
+  }
+
+  .modal_heading {
+    font-size: 17px;
+  }
+
+  .modal_button {
+    width: 90%;
+    font-size: 15px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .modal_input_card {
     padding: 15px;
   }
 
@@ -88,7 +110,7 @@
   }
 
   .modal_button {
-    width: 90%;
+    width: 95%;
     font-size: 14px;
   }
 }

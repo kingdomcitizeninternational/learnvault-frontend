@@ -57,7 +57,6 @@ function App() {
             path="/profile"
             element={user ? <Profile /> : <Navigate to="/login" />}
           />
-
         
         </Routes>
       </Suspense>
