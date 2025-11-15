@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 
 const CATEGORIES = [
   { title: "Physics Notes", course: "PHY 101", author: "Dr. Smith", date: "May 12, 2025" },
-  { title: "Sociology Lecture", course: "SOC 102", author: "Dr. Johnson", date: "May 11, 2025" },
+  
   { title: "Calculus Assignment", course: "MTH 101", author: "Prof. Williams", date: "May 10, 2025" },
 ];
 
@@ -108,11 +108,7 @@ export default function HomePage() {
               </motion.button>
             </div>
 
-            <ul className={styles.badges} aria-hidden>
-              <li><strong>10k+</strong> Materials</li>
-              <li><strong>2k+</strong> Universities</li>
-              <li><strong>1M+</strong> Downloads</li>
-            </ul>
+          
           </motion.div>
 
           <motion.figure
@@ -137,8 +133,7 @@ export default function HomePage() {
       <section className={styles.statsStrip} aria-hidden>
         <div className={styles.statsInner}>
           <div className={styles.stat}><strong>10,345</strong><span>materials</span></div>
-          <div className={styles.stat}><strong>2,128</strong><span>universities</span></div>
-          <div className={styles.stat}><strong>1M+</strong><span>downloads</span></div>
+          
           <div className={styles.stat}><strong>99.9%</strong><span>uptime</span></div>
         </div>
       </section>
